@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 99%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #6F6AF7;
+            padding: 10px 20px;
+        }
+
+        .navbar .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .left a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 21px;
+            font-family: sans-serif;
+        }
+
+        /* .navbar .left a:hover {
+            background-color: #ddd;
+            color: black;
+        } */
+
+        .navbar .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .navbar .search-container input[type=text] {
+            padding: 6px;
+            margin-left: 10px;
+            font-size: 17px;
+            border: none;
+            border-radius: 30px;
+
+        }
+
+        .navbar .search-container .search-icon {
+            position: absolute;
+            right: 155px;
+            height: 20px;
+        }
+
+        .navbar .right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .right .name {
+            color: white;
+            margin-right: 20px;
+            font-family: cursive;
+            font-size: 34px;
+        }
+
+        .dots {
+            height: 35px;
+            margin-top: 6px;
+            margin-left: 31px;
+            margin-right: 12px;
+        }
+
+        .expand {
+            height: 10px;
+            margin-left: -17px;
+        }
+
+        .image1 {
+            margin-top: 130px;
+            margin-left: 104px;
+            height: 400px;
+            width: 370px;
+            border-radius: 30px
+        }
+
+        .card {
+            margin-left: 65px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: #E5D8FF;
+            margin-top: 130px;
+            border-radius: 30px;
+            width: 55%;
+        }
+
+        .content {
+            margin-top: 35px;
+            margin-left: 18px;
+            font-size: 16px;
+            color: #6F7373
+        }
+
+        .maincardDiv {
+            display: flex;
+            margin-top: 98px;
+
+        }
+
+        .cardDiv {
+            display: flex;
+
+        }
+
+        div.stickyImg {
+            /* For Safari */
+            position: sticky;
+            top: 92px;
+            right: 30px;
+            margin-top: -20%;
+            margin-left: 93%;
+            height: 261px;
+            width: 88px;
+        }
+
+        
+        /* div.stickyImg {
+        position: sticky;
+        top: 100%;
+        margin-top: 130%;
+        margin-left: 48px;
+        height: 261px;
+        width: 88px;
+
+        }
+        */ 
+        
+        .smallcard1 {
+            margin-left: 106px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: #929DFF;
+            margin-top: 85px;
+            border-radius: 11px;
+            width: 235px;
+            padding: 15px;
+
+        }
+
+        .smallcard2 {
+            margin-left: 106px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: #734CF2;
+            margin-top: 85px;
+            border-radius: 11px;
+            width: 235px;
+            padding: 15px;
+        }
+
+        .smallcard3 {
+            margin-left: 106px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: #D288FF;
+            margin-top: 85px;
+            border-radius: 11px;
+            width: 235px;
+            padding: 15px;
+        }
+
+        .smallcard4 {
+            margin-left: 106px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: black;
+            margin-top: 85px;
+            border-radius: 11px;
+            width: 235px;
+            padding: 15px;
+        }
+
+        .smallcardscontent {
+            color: white;
+            font-size:16px
+        }
+
+        .endCard {
+            margin-left: 89px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: #483EFF;
+            margin-top: 85px;
+            border-radius: 30px;
+            width: 83%;
+            height: 381px;
+            /* padding-bottom: 5px; */
+        }
+
+        /* .innercard {
+            margin-left: 65px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: white;
+            margin-top: 22px;
+            border-radius: 15px;
+            width: 62%;
+            padding-bottom: 100px;
+        } */
+
+        .innercard {
+            margin-left: 65px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: white;
+            margin-top: 20px;
+            border-radius: 15px;
+            width: 75%;
+            padding-bottom: 106px;
+            /* Add some padding to the bottom to avoid overlapping with the button */
+            position: relative;
+            /* Ensure that the inner card is the reference for the absolutely positioned button */
+        }
+
+        .button1 {
+            margin-top: 35px;
+            background-color: #BCE0F6;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+            margin-left: 90px;
+            height: 59px;
+            width: 173px;
+        }
+
+        .button23 {
+            margin-top: 60px;
+            background-color: #483EFF;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+            margin-left: 90px;
+            height: 59px;
+            width: 173px;
+            border: 3px solid white;
+        }
+
+        /* .nextButton {
+            color: white;
+            background-color: black;
+            height: 40px;
+            width: 100px;
+            border-radius: 5px;
+        } */
+
+        .nextButton {
+            position: absolute;
+            bottom: 20px;
+            /* Adjust the value as needed */
+            right: 20px;
+            /* Adjust the value as needed */
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .vectorImg {
+            height: 44px;
+            margin-left: 84%;
+            position: fixed;
+            top: 712px;
+            background: whitesmoke;
+            border-radius: 34px;
+            padding: 11px;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="right">
+            <div class="name">Dappr</div>
+        </div>
+        <div class="left">
+            <a href="#home">Home</a>
+            <a href="#aboutus">About Us</a>
+            <a href="#information">Information</a>
+            <a href="#more">More</a><img src="./images/icons8-expand-50.png" class="expand" />
+            <div class="search-container">
+                <input type="text" placeholder="Search...." name="search" id="search">
+                <img src="./images/icons8-search-50.png" class="search-icon" />
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <div>
+                    <img src="./images/icons8-menu-50.png" class="dots" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cardDiv">
+        <div>
+            <img src="./images/image 4.png" class="image1" />
+        </div>
+        <div class="card">
+            <p class="content">It's not only writers who can benefit from this free online tool. If you're a programmer
+                who's working on a ......</p>
+        </div>
+    </div>
+    <div class="stickyImg">
+        <img src="./images/Frame 1.png" />
+    </div>
+
+    <div class="maincardDiv">
+        <div class="smallcard1">
+            <p class="smallcardscontent">Total Question's<br /><br />200,000</p>
+        </div>
+        <div class="smallcard2">
+            <p class="smallcardscontent">Total Answer’s<br /><br />105,000</p>
+        </div>
+        <div class="smallcard3">
+            <p class="smallcardscontent">Participated<br /><br />10,000</p>
+        </div>
+        <div class="smallcard4">
+            <p class="smallcardscontent">Total Passed<br /><br />6,000</p>
+        </div>
+    </div>
+
+    <div class="endCard">
+        <div class="cardDiv">
+            <div>
+                <div>
+                    <button class="button1" size="large">YOUR INFO</button>
+                </div>
+                <div>
+                    <button class="button23">BOOKMARKS</button>
+
+                </div>
+                <div>
+                    <button class="button23">SETTINGS</button>
+
+                </div>
+            </div>
+            <div class="innercard">
+
+                <h5 style="margin-left: 30px;font-size: 20px;font-family: monospace;color: #04285A;">Your Information
+                </h5>
+                <p style="margin-left: 40px;color: #04285A;"><b>Name</b>&nbsp;: &nbsp;Athul Singhal</p>
+                <p style="margin-left: 40px;color: #04285A;"><b>Email</b>&nbsp;: &nbsp;athul@gmail.com</p>
+                <p style="margin-left: 40px;color: #04285A;"><b>Phone</b>&nbsp;: &nbsp;+91 8131424888</p>
+                <p style="margin-left: 40px;color: #04285A;"><b>Marks</b>&nbsp;: &nbsp;500.00</p>
+                <button class="nextButton">Next &nbsp;<img src="./images/icons8-arrow-30.png" height="15px" /></button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div>
+        <img src="./images/Vector.png" class="vectorImg" />
+    </div>
+    <br />
+    <br />
+
+
+</body>
+
+</html>
